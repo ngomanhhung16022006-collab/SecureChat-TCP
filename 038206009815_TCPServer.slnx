@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="TimeTCPClient/TimeTCPClient.csproj" />
+  <Project Path="TimeTCPServer/TimeTCPServer.csproj" />
+</Solution>

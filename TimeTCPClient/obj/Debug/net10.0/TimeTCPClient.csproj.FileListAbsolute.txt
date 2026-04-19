@@ -1,0 +1,14 @@
+C:\Users\ASUS-Q304UA\source\repos\038206009815_TCPServer\TimeTCPClient\bin\Debug\net10.0\TimeTCPClient.exe
+C:\Users\ASUS-Q304UA\source\repos\038206009815_TCPServer\TimeTCPClient\bin\Debug\net10.0\TimeTCPClient.deps.json
+C:\Users\ASUS-Q304UA\source\repos\038206009815_TCPServer\TimeTCPClient\bin\Debug\net10.0\TimeTCPClient.runtimeconfig.json
+C:\Users\ASUS-Q304UA\source\repos\038206009815_TCPServer\TimeTCPClient\bin\Debug\net10.0\TimeTCPClient.dll
+C:\Users\ASUS-Q304UA\source\repos\038206009815_TCPServer\TimeTCPClient\bin\Debug\net10.0\TimeTCPClient.pdb
+C:\Users\ASUS-Q304UA\source\repos\038206009815_TCPServer\TimeTCPClient\obj\Debug\net10.0\TimeTCPClient.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ASUS-Q304UA\source\repos\038206009815_TCPServer\TimeTCPClient\obj\Debug\net10.0\TimeTCPClient.AssemblyInfoInputs.cache
+C:\Users\ASUS-Q304UA\source\repos\038206009815_TCPServer\TimeTCPClient\obj\Debug\net10.0\TimeTCPClient.AssemblyInfo.cs
+C:\Users\ASUS-Q304UA\source\repos\038206009815_TCPServer\TimeTCPClient\obj\Debug\net10.0\TimeTCPClient.csproj.CoreCompileInputs.cache
+C:\Users\ASUS-Q304UA\source\repos\038206009815_TCPServer\TimeTCPClient\obj\Debug\net10.0\TimeTCPClient.dll
+C:\Users\ASUS-Q304UA\source\repos\038206009815_TCPServer\TimeTCPClient\obj\Debug\net10.0\refint\TimeTCPClient.dll
+C:\Users\ASUS-Q304UA\source\repos\038206009815_TCPServer\TimeTCPClient\obj\Debug\net10.0\TimeTCPClient.pdb
+C:\Users\ASUS-Q304UA\source\repos\038206009815_TCPServer\TimeTCPClient\obj\Debug\net10.0\TimeTCPClient.genruntimeconfig.cache
+C:\Users\ASUS-Q304UA\source\repos\038206009815_TCPServer\TimeTCPClient\obj\Debug\net10.0\ref\TimeTCPClient.dll

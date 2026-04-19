@@ -1,0 +1,14 @@
+C:\Users\ASUS-Q304UA\source\repos\038206009815_TCPServer\TimeTCPServer\bin\Debug\net10.0\TimeTCPServer.exe
+C:\Users\ASUS-Q304UA\source\repos\038206009815_TCPServer\TimeTCPServer\bin\Debug\net10.0\TimeTCPServer.deps.json
+C:\Users\ASUS-Q304UA\source\repos\038206009815_TCPServer\TimeTCPServer\bin\Debug\net10.0\TimeTCPServer.runtimeconfig.json
+C:\Users\ASUS-Q304UA\source\repos\038206009815_TCPServer\TimeTCPServer\bin\Debug\net10.0\TimeTCPServer.dll
+C:\Users\ASUS-Q304UA\source\repos\038206009815_TCPServer\TimeTCPServer\bin\Debug\net10.0\TimeTCPServer.pdb
+C:\Users\ASUS-Q304UA\source\repos\038206009815_TCPServer\TimeTCPServer\obj\Debug\net10.0\TimeTCPServer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ASUS-Q304UA\source\repos\038206009815_TCPServer\TimeTCPServer\obj\Debug\net10.0\TimeTCPServer.AssemblyInfoInputs.cache
+C:\Users\ASUS-Q304UA\source\repos\038206009815_TCPServer\TimeTCPServer\obj\Debug\net10.0\TimeTCPServer.AssemblyInfo.cs
+C:\Users\ASUS-Q304UA\source\repos\038206009815_TCPServer\TimeTCPServer\obj\Debug\net10.0\TimeTCPServer.csproj.CoreCompileInputs.cache
+C:\Users\ASUS-Q304UA\source\repos\038206009815_TCPServer\TimeTCPServer\obj\Debug\net10.0\TimeTCPServer.dll
+C:\Users\ASUS-Q304UA\source\repos\038206009815_TCPServer\TimeTCPServer\obj\Debug\net10.0\refint\TimeTCPServer.dll
+C:\Users\ASUS-Q304UA\source\repos\038206009815_TCPServer\TimeTCPServer\obj\Debug\net10.0\TimeTCPServer.pdb
+C:\Users\ASUS-Q304UA\source\repos\038206009815_TCPServer\TimeTCPServer\obj\Debug\net10.0\TimeTCPServer.genruntimeconfig.cache
+C:\Users\ASUS-Q304UA\source\repos\038206009815_TCPServer\TimeTCPServer\obj\Debug\net10.0\ref\TimeTCPServer.dll
