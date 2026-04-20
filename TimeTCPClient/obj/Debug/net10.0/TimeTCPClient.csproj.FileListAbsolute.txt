@@ -12,3 +12,4 @@ C:\Users\ASUS-Q304UA\source\repos\038206009815_TCPServer\TimeTCPClient\obj\Debug
 C:\Users\ASUS-Q304UA\source\repos\038206009815_TCPServer\TimeTCPClient\obj\Debug\net10.0\TimeTCPClient.pdb
 C:\Users\ASUS-Q304UA\source\repos\038206009815_TCPServer\TimeTCPClient\obj\Debug\net10.0\TimeTCPClient.genruntimeconfig.cache
 C:\Users\ASUS-Q304UA\source\repos\038206009815_TCPServer\TimeTCPClient\obj\Debug\net10.0\ref\TimeTCPClient.dll
+C:\Users\ASUS-Q304UA\source\repos\038206009815_TCPServer\TimeTCPClient\obj\Debug\net10.0\TimeTCPClient.sourcelink.json

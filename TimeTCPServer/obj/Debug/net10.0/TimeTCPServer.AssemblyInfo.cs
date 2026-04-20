@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TimeTCPServer")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d8de09c7b75727ef690ea52df1afb58d2393341a")]
 [assembly: System.Reflection.AssemblyProductAttribute("TimeTCPServer")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TimeTCPServer")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
