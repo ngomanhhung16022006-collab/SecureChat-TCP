@@ -14,6 +14,12 @@ class Program
         NetworkStream stream = client.GetStream();
 
         Console.WriteLine("Da ket noi server!");
+        Console.WriteLine("Nhap ten:"); 
+        String name = Console.ReadLine();
+        byte[] nameData = Encoding.UTF8.GetBytes(name);
+        stream.Write(nameData, 0, nameData.Length);
+
+
 
         // Thread nhận tin
         Thread receiveThread = new Thread(() =>
