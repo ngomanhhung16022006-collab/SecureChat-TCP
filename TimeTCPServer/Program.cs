@@ -15,7 +15,7 @@ class Program
         TcpListener server = new TcpListener(IPAddress.Any, 9999);
         server.Start();
 
-        Console.WriteLine("Server dang cho client...");
+        Console.WriteLine("Server dang chay...");
 
         while (true)
         {
@@ -26,59 +26,62 @@ class Program
                 clients.Add(client);
             }
 
-            Console.WriteLine("Co client moi ket noi!");
-
-            Thread t = new Thread(() => HandleClient(client));
+            Thread t = new Thread(() => Handle(client));
             t.Start();
         }
     }
 
-    static void HandleClient(TcpClient client)
+    static void Handle(TcpClient client)
     {
         NetworkStream stream = client.GetStream();
         byte[] buffer = new byte[1024];
-
         string name = "";
 
         try
         {
-            // 👉 Nhận username
+            // nhận username
             int bytes = stream.Read(buffer, 0, buffer.Length);
             if (bytes == 0) return;
 
-            name = Encoding.UTF8.GetString(buffer, 0, bytes);
+            name = Encoding.UTF8.GetString(buffer, 0, bytes).Trim();
 
             lock (clientNames)
             {
                 clientNames[client] = name;
             }
 
-            Console.WriteLine(name + " da tham gia");
-
-            // 👉 Thông báo join
-            Broadcast(name + " da tham gia", client);
-
-            // 👉 Gửi danh sách online
+            Console.WriteLine(name + " joined");
+           
+            // JOIN
+            Broadcast("JOIN|" + name + "\n", client);
             SendUserList();
+
+            string dataBuffer = "";
 
             while (true)
             {
                 bytes = stream.Read(buffer, 0, buffer.Length);
                 if (bytes == 0) break;
 
-                string msg = Encoding.UTF8.GetString(buffer, 0, bytes);
-                string fullMsg = name + ": " + msg;
+                dataBuffer += Encoding.UTF8.GetString(buffer, 0, bytes);
 
-                Console.WriteLine(fullMsg);
+                string[] messages = dataBuffer.Split('\n');
 
-                Broadcast(fullMsg, client);
+                for (int i = 0; i < messages.Length - 1; i++)
+                {
+                    string msg = messages[i].Trim();
+                    if (msg == "") continue;
+                    Console.WriteLine("RAW (server khong hieu): " + msg);
+                    Broadcast("MSG|" + name + "|" + msg + "\n", client);
+                }
+
+                // giữ lại phần chưa hoàn chỉnh
+                dataBuffer = messages[messages.Length - 1];
             }
-        }
         catch { }
 
-        Console.WriteLine(name + " da roi");
+        Console.WriteLine(name + " left");
 
-        // 👉 Xóa client
         lock (clients)
         {
             clients.Remove(client);
@@ -89,12 +92,9 @@ class Program
             if (clientNames.ContainsKey(client))
                 clientNames.Remove(client);
         }
-
-        // 👉 Gửi lại danh sách online
         SendUserList();
-
-        // 👉 Thông báo leave
-        Broadcast(name + " da roi", client);
+        Broadcast("LEAVE|" + name + "\n", client);
+       
     }
 
     static void Broadcast(string message, TcpClient sender)
@@ -120,15 +120,14 @@ class Program
 
     static void SendUserList()
     {
-        string list = "Online: ";
+        string list = "ONLINE|";
 
         lock (clientNames)
         {
-            foreach (var name in clientNames.Values)
-            {
-                list += name + ", ";
-            }
+            list += string.Join(",", clientNames.Values);
         }
+
+        list += "\n"; // kết thúc 1 message
 
         byte[] data = Encoding.UTF8.GetBytes(list);
 
