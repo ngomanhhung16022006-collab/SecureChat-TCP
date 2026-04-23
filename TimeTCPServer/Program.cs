@@ -8,7 +8,7 @@ using System.Collections.Generic;
 class Program
 {
     static List<TcpClient> clients = new List<TcpClient>();
-    static Dictionary<TcpClient, string> clientNames = new Dictionary<TcpClient, string>(); // luu ten user 
+    static Dictionary<TcpClient, string> clientNames = new Dictionary<TcpClient, string>();
 
     static void Main()
     {
@@ -38,13 +38,15 @@ class Program
         NetworkStream stream = client.GetStream();
         byte[] buffer = new byte[1024];
 
+        string name = "";
+
         try
         {
-            //  Nhận username đầu tiên
+            // 👉 Nhận username
             int bytes = stream.Read(buffer, 0, buffer.Length);
             if (bytes == 0) return;
 
-            string name = Encoding.UTF8.GetString(buffer, 0, bytes);
+            name = Encoding.UTF8.GetString(buffer, 0, bytes);
 
             lock (clientNames)
             {
@@ -53,35 +55,30 @@ class Program
 
             Console.WriteLine(name + " da tham gia");
 
+            // 👉 Thông báo join
+            Broadcast(name + " da tham gia", client);
+
+            // 👉 Gửi danh sách online
+            SendUserList();
+
             while (true)
             {
                 bytes = stream.Read(buffer, 0, buffer.Length);
                 if (bytes == 0) break;
 
                 string msg = Encoding.UTF8.GetString(buffer, 0, bytes);
-
-                string fullMsg = clientNames[client] + ": " + msg;
+                string fullMsg = name + ": " + msg;
 
                 Console.WriteLine(fullMsg);
 
-                //  Broadcast
-                lock (clients)
-                {
-                    foreach (var c in clients)
-                    {
-                        if (c != client)
-                        {
-                            NetworkStream s = c.GetStream();
-                            byte[] data = Encoding.UTF8.GetBytes(fullMsg);
-                            s.Write(data, 0, data.Length);
-                        }
-                    }
-                }
+                Broadcast(fullMsg, client);
             }
         }
         catch { }
 
-        //  Remove client
+        Console.WriteLine(name + " da roi");
+
+        // 👉 Xóa client
         lock (clients)
         {
             clients.Remove(client);
@@ -91,6 +88,61 @@ class Program
         {
             if (clientNames.ContainsKey(client))
                 clientNames.Remove(client);
+        }
+
+        // 👉 Gửi lại danh sách online
+        SendUserList();
+
+        // 👉 Thông báo leave
+        Broadcast(name + " da roi", client);
+    }
+
+    static void Broadcast(string message, TcpClient sender)
+    {
+        byte[] data = Encoding.UTF8.GetBytes(message);
+
+        lock (clients)
+        {
+            foreach (var c in clients)
+            {
+                if (c != sender)
+                {
+                    try
+                    {
+                        NetworkStream s = c.GetStream();
+                        s.Write(data, 0, data.Length);
+                    }
+                    catch { }
+                }
+            }
+        }
+    }
+
+    static void SendUserList()
+    {
+        string list = "Online: ";
+
+        lock (clientNames)
+        {
+            foreach (var name in clientNames.Values)
+            {
+                list += name + ", ";
+            }
+        }
+
+        byte[] data = Encoding.UTF8.GetBytes(list);
+
+        lock (clients)
+        {
+            foreach (var c in clients)
+            {
+                try
+                {
+                    NetworkStream s = c.GetStream();
+                    s.Write(data, 0, data.Length);
+                }
+                catch { }
+            }
         }
     }
 }

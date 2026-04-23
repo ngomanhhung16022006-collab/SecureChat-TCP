@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TimeTCPClient")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8f6e722d490fef78273d8b68bef8486df0f8e0ff")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+688fcfd651b2ac2296d266d74ed1f3f0553129ad")]
 [assembly: System.Reflection.AssemblyProductAttribute("TimeTCPClient")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TimeTCPClient")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
