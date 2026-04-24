@@ -1,5 +1,5 @@
  🔐 Secure Chat Application (AES)
- 📌 Giới thiệu
+  Giới thiệu
 Đây là một ứng dụng chat đơn giản được xây dựng theo mô hình **Client-Server** sử dụng **TCP Socket**.  
 Hệ thống cho phép nhiều client kết nối tới server và trao đổi tin nhắn theo thời gian thực.
 
@@ -9,12 +9,12 @@ Hệ thống cho phép nhiều client kết nối tới server và trao đổi t
 
  Tính năng chính
 
-- 💬 Chat thời gian thực giữa nhiều client
-- 👥 Hiển thị danh sách người dùng online
-- 🔐 Mã hóa tin nhắn bằng AES
-- 📡 Giao tiếp qua TCP
-- 🧠 Sử dụng protocol riêng để xử lý dữ liệu
-- ⚡ Xử lý đa luồng (Thread) để nhận dữ liệu liên tục
+- Chat thời gian thực giữa nhiều client
+- Hiển thị danh sách người dùng online
+- Mã hóa tin nhắn bằng AES
+- Giao tiếp qua TCP
+- Sử dụng protocol riêng để xử lý dữ liệu
+- Xử lý đa luồng (Thread) để nhận dữ liệu liên tục
 
 ---
 
