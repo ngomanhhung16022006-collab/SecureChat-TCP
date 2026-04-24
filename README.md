@@ -38,4 +38,4 @@ Hệ thống cho phép nhiều client kết nối tới server và trao đổi t
 - Loại: Symmetric Encryption (mã hóa đối xứng)
 - Key và IV được sử dụng để mã hóa và giải mã
 
-### 🔄 Quy trình:
+
