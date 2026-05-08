@@ -1,4 +1,4 @@
- 🔐 Secure Chat Application (AES)
+ Secure Chat Application (AES)
   Giới thiệu
 Đây là một ứng dụng chat đơn giản được xây dựng theo mô hình **Client-Server** sử dụng **TCP Socket**.  
 Hệ thống cho phép nhiều client kết nối tới server và trao đổi tin nhắn theo thời gian thực.
